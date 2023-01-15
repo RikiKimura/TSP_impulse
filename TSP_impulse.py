@@ -1,4 +1,4 @@
-﻿import sounddevice as sd
+import sounddevice as sd
 import soundfile as sf
 import numpy as np
 import os
@@ -88,7 +88,7 @@ def makedir():
 
 
 if __name__ == '__main__':
-    name = "Unknown" #被験者名
+    name = "Unknown" #名前
     length = 14 #長さ(2^?)
     amp = 1 #振幅(MAX=1に対する倍率)
     repeat = 1 #同期加算回数
