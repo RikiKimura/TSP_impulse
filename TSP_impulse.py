@@ -115,7 +115,7 @@ if __name__ == '__main__':
         output_device = int(args[8])
 
     # データパス設定
-    datapath = "DDB/" + name + "_" + str(datetime.date.today()) + "-" + str(datetime.datetime.now().strftime('%H-%M'))
+    datapath = "BINARY/" + name + "_" + str(datetime.date.today()) + "-" + str(datetime.datetime.now().strftime('%H-%M'))
 
     makedir()
 
@@ -178,7 +178,7 @@ if __name__ == '__main__':
 
             # インパルス応答の保存
             h_normal2 = h_normal.real/max(abs(h_normal.real))
-            with open(str(datapath) + "/Impulse/"+str(count)+".DDB", "wb") as fout:
+            with open(str(datapath) + "/Impulse/"+str(count)+".binary", "wb") as fout:
                 for k in range(len(h_normal2)):
                     fout.write(struct.pack("d", h_normal2[k]))
 
@@ -227,10 +227,10 @@ if __name__ == '__main__':
 
             h_normall2 = h_normall.real / max(abs(h_normall.real))
             h_normalr2 = h_normalr.real / max(abs(h_normalr.real))
-            with open(str(datapath) + "/Impulse/L/"+str(count)+".DDB", "wb") as flout:
+            with open(str(datapath) + "/Impulse/L/"+str(count)+".binary", "wb") as flout:
                 for k in range(len(h_normall2)):
                     flout.write(struct.pack("d", h_normall2[k]))
-            with open(str(datapath) + "/Impulse/R/"+str(count)+".DDB", "wb") as frout:
+            with open(str(datapath) + "/Impulse/R/"+str(count)+".binary", "wb") as frout:
                 for q in range(len(h_normalr2)):
                     frout.write(struct.pack("d", h_normalr2[q]))
 
