@@ -10,8 +10,6 @@ style.configure('.', font = ('', 18))
 
 root.title('TSP測定スクリプト')
 
-
-
 frame1 = ttk.Frame(root, padding=10)
 frame1.grid()
 
@@ -169,6 +167,6 @@ scrollbar = ttk.Scrollbar(
     orient=VERTICAL,
     command=txt.yview)
 txt["yscrollcommand"] = scrollbar.set
-scrollbar.grid(row=11, column=3)
+scrollbar.grid(row=11, column=3,  sticky=N+S+W)
 
 root.mainloop()
